@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG-Based Parkinson's Disease Detection Using Machine Learning</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2f7; /* Light cyan background, similar to image */
+        }
+        /* Custom colors for a teal/greenish feel */
+        .bg-custom-dark-teal {
+            background-color: #00796B; /* Darker teal for header/nav */
+        }
+        .text-custom-light-teal {
+            color: #B2DFDB; /* Lighter teal for text */
+        }
+        .bg-custom-light-green {
+            background-color: #E0F2F1; /* Very light green for main sections */
+        }
+        .text-custom-green-dark {
+            color: #004D40; /* Dark green for section titles */
+        }
+        .border-custom-teal {
+            border-color: #4DB6AC;
+        }
+        .btn-primary {
+            background-color: #00796B; /* Dark teal button */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #004D40; /* Darker teal on hover */
+        }
+        .link-button {
+            @apply inline-block px-6 py-3 rounded-full font-semibold text-white transition-colors duration-200;
+        }
+        .link-button.login {
+            @apply bg-blue-600 hover:bg-blue-700;
+        }
+        .link-button.signup {
+            @apply bg-green-600 hover:bg-green-700;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-custom-dark-teal p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold rounded-md px-3 py-1">Parkinson's EEG</a>
+            <div class="space-x-4">
+                <a href="#what-is-pd" class="text-white hover:text-custom-light-teal transition-colors duration-200">What is PD?</a>
+                <a href="#how-it-works" class="text-white hover:text-custom-light-teal transition-colors duration-200">How It Works</a>
+                <a href="#why-use" class="text-white hover:text-custom-light-teal transition-colors duration-200">Why Use?</a>
+                <a href="{{ url_for('login') }}" class="bg-custom-light-green text-custom-dark-teal px-4 py-2 rounded-md font-semibold hover:bg-white transition-colors duration-200">Login</a>
+                <a href="{{ url_for('signup') }}" class="bg-custom-light-green text-custom-dark-teal px-4 py-2 rounded-md font-semibold hover:bg-white transition-colors duration-200">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-4xl w-full bg-custom-light-green shadow-xl rounded-2xl overflow-hidden text-center py-16 px-8 md:px-12 border border-custom-teal">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-custom-green-dark">
+                EEG-Based Parkinson's Disease Detection Using Machine Learning
+            </h1>
+            <p class="text-lg md:text-xl font-light opacity-90 text-gray-700 mb-8">
+                AI-powered prediction using EEG signals to help detect Parkinson’s disease early. Fast. Reliable. Accessible.
+            </p>
+            <a href="#how-it-works" class="btn-primary inline-block">Learn More</a>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="space-y-8">
+
+            <!-- What is Parkinson's Disease? Section -->
+            <div id="what-is-pd" class="section bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-3 text-blue-600 text-3xl">🧬</span> What is Parkinson's Disease?
+                </h2>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    Parkinson’s is a progressive neurodegenerative disorder that affects movement and coordination. Early detection is key to improving quality of life and slowing its progression.
+                </p>
+            </div>
+
+            <!-- How Does This Work? Section -->
+            <div id="how-it-works" class="section bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-3 text-blue-600 text-3xl">📊</span> How Does This Work?
+                </h2>
+                <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                    This web app uses machine learning to detect Parkinson’s disease from EEG (electroencephalogram) data. You’ll input 5 EEG-derived features:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                    <li><strong>Mean</strong> – average signal amplitude</li>
+                    <li><strong>Standard Deviation</strong> – variability of the EEG</li>
+                    <li><strong>Kurtosis</strong> – signal sharpness</li>
+                    <li><strong>Skewness</strong> – asymmetry of the distribution</li>
+                    <li><strong>Entropy</strong> – signal complexity</li>
+                </ul>
+                <p class="text-gray-700 leading-relaxed text-lg mt-4">
+                    Once submitted, our AI model predicts whether signs of Parkinson’s are present in the data.
+                </p>
+            </div>
+
+            <!-- Why Use This Tool? Section -->
+            <div id="why-use" class="section bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-3 text-green-600 text-3xl">💡</span> Why Use This Tool?
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
+                    <li>⚡ <strong class="font-semibold">Instant Predictions</strong> – Get fast results in seconds</li>
+                    <li>🧠 <strong class="font-semibold">Research-Backed</strong> – Based on scientific EEG feature analysis</li>
+                    <li>🔒 <strong class="font-semibold">Privacy First</strong> – Your data is never stored</li>
+                    <li>🆓 <strong class="font-semibold">Completely Free</strong> – No login required to test the model</li>
+                </ul>
+            </div>
+
+            <!-- Learn More Section -->
+            <div class="section bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">📚 Learn More</h2>
+                <p class="text-gray-700 leading-relaxed text-lg mb-6">
+                    Explore the science behind the classifier, read our research methodology, or access the dataset used to build this tool.
+                </p>
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7619368/" target="_blank" class="btn-primary inline-block text-white hover:underline">Read Research Article</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-custom-dark-teal text-white text-center p-4 mt-8">
+        <p class="text-sm opacity-80">Contact us: support@parkinsons-eeg.com</p>
+    </footer>
+
+</body>
+</html>
+

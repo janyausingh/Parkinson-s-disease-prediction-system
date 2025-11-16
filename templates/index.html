@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🧠 Parkinson's EEG Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>🧠 Parkinson's Detection</h2>
+        <form method="POST" onsubmit="showLoader()">
+
+            <div class="input-box">
+                <label for="mean">Mean</label>
+                <input type="text" name="mean" id="mean" required>
+                <i class='bx bxs-chart'></i>
+            </div>
+
+            <div class="input-box">
+                <label for="std">Standard Deviation</label>
+                <input type="text" name="std" id="std" required>
+                <i class='bx bxs-bar-chart-square'></i>
+            </div>
+
+            <div class="input-box">
+                <label for="kurtosis">Kurtosis</label>
+                <input type="text" name="kurtosis" id="kurtosis" required>
+                <i class='bx bxs-component'></i>
+            </div>
+
+            <div class="input-box">
+                <label for="skewness">Skewness</label>
+                <input type="text" name="skewness" id="skewness" required>
+                <i class='bx bxs-signal-5'></i>
+            </div>
+
+            <div class="input-box">
+                <label for="entropy">Entropy</label>
+                <input type="text" name="entropy" id="entropy" required>
+                <i class='bx bxs-brain'></i>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+            <div id="loader">⏳ Predicting...</div>
+
+            {% if result %}
+                <div class="result">
+                    <strong>Prediction:</strong> {{ result }}
+                </div>
+            {% endif %}
+
+            {% if error %}
+                <div class="error-message">
+                    <strong>Error:</strong> {{ error }}
+                </div>
+            {% endif %}
+        </form>
+    </div>
+
+    <script>
+        function showLoader() {
+            document.getElementById("loader").style.display = "block";
+        }
+    </script>
+</body>
+</html>

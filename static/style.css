@@ -1,0 +1,125 @@
+/* Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background Gradient */
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.signup-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 400px;
+    color: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Heading */
+.signup-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #00f0ff;
+}
+
+/* Input Group */
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #f0f0f0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #00f0ff;
+}
+
+/* Icons in Input */
+.input-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00f0ff;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #00f0ff, #00d4ff);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #00d4ff, #00aaff);
+    box-shadow: 0 4px 30px rgba(0, 180, 255, 0.4);
+}
+
+/* Loader */
+#loader {
+    display: none;
+    margin-top: 12px;
+    color: #f0f0f0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    color: #00ff99;
+    font-weight: 600;
+}
+
+/* Error Message */
+.error-message {
+    color: #ff6b6b;
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}About - Parkinson's EEG Classifier{% endblock %}
+
+{% block content %}
+<section style="padding: 60px 20px; background: #eef1fb;">
+  <div class="container" style="max-width: 1000px; margin: auto;">
+    <h1 style="text-align: center; color: #4e54c8; margin-bottom: 40px;">About This Project</h1>
+
+    <div class="section" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(78,84,200,0.15);">
+      <h2 style="color: #4e54c8;">🎯 Mission</h2>
+      <p>
+        The goal of this project is to provide a fast, accessible, and AI-powered tool for the early detection of Parkinson’s disease using EEG signals. Our approach blends neuroscience and machine learning to assist doctors and patients in quicker decision-making.
+      </p>
+    </div>
+
+    <div class="section" style="background: #fff; padding: 30px; margin-top: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(78,84,200,0.15);">
+      <h2 style="color: #4e54c8;">🧠 How It Works</h2>
+      <p>
+        The classifier uses five statistical features derived from EEG signals:
+      </p>
+      <ul style="padding-left: 20px;">
+        <li><strong>Mean:</strong> Average amplitude</li>
+        <li><strong>Standard Deviation:</strong> Signal spread</li>
+        <li><strong>Kurtosis:</strong> Peak sharpness</li>
+        <li><strong>Skewness:</strong> Signal asymmetry</li>
+        <li><strong>Entropy:</strong> Degree of randomness</li>
+      </ul>
+      <p>
+        A machine learning model trained on clinically validated EEG data analyzes these features to predict whether a person is likely to have Parkinson’s.
+      </p>
+    </div>
+
+    <div class="section" style="background: #fff; padding: 30px; margin-top: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(78,84,200,0.15);">
+      <h2 style="color: #4e54c8;">🔍 Research Behind It</h2>
+      <p>
+        This project is inspired by studies like 
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9139946/" target="_blank" style="color: #8f94fb; text-decoration: underline;">PMC9139946</a>, which explored EEG feature extraction and classification techniques for Parkinson’s disease.
+      </p>
+    </div>
+
+    <div class="section" style="background: #fff; padding: 30px; margin-top: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(78,84,200,0.15);">
+      <h2 style="color: #4e54c8;">👨‍💻 Tech Stack</h2>
+      <ul style="padding-left: 20px;">
+        <li>Flask (Python Web Framework)</li>
+        <li>SQLite (User database)</li>
+        <li>Joblib + Scikit-learn (Model serialization & ML)</li>
+        <li>HTML/CSS (Frontend UI)</li>
+      </ul>
+    </div>
+
+    <div class="section" style="background: #fff; padding: 30px; margin-top: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(78,84,200,0.15);">
+      <h2 style="color: #4e54c8;">📬 Contact</h2>
+      <p>
+        Have questions or suggestions? Reach out at 
+        <a href="mailto:youremail@example.com" style="color: #8f94fb;">youremail@example.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
